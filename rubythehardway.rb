@@ -160,6 +160,8 @@
 
 # 	txt_again = open(file_again)
 
+
+# //////////////////////////////
 # 	print txt_again.read
 
 # 	array = ['glob pish' => 9,
@@ -170,6 +172,103 @@
 #   x	= array.gsub(/(\w+)\*?(\w+)/)
 
 # p x
+
+# filename = ARGV.first
+# puts "We're going to erase #{filename}"
+# puts "If you don't want that, hit CTRL-C(^C)"
+# puts "IF you don't want that, hit RETURN."
+
+# $stdin.gets
+
+# puts "Opening the file..."
+# target = open(filename, 'w')
+# puts "Truncating the file. Goodbye!"
+# target.truncate(10)
+
+# puts "Now I'm going to ask you for three lines"
+
+# print "line 1:"
+# line1 = $stdin.gets.chomp
+# print "line 2: "
+# line2 = $stdin.gets.chomp
+# print "line 3: "
+# line3 = $stdin.gets.chomp
+
+# puts "I'm going to write these to the file."
+
+# target.write(line1)
+# target.write("\n")
+# target.write(line2)
+# target.write("\n")
+# target.write(line3)
+# target.write("\n")
+
+# puts "And finally, we close it."
+# target.close
+
+# from_file, to_file = ARGV
+# puts "Copying from #{from_file} to #{to_file}"
+
+# in_file = open(from_file)
+# indata = in_file.read
+
+# puts "The input file is #{indata.length} bytes long"
+
+# puts "Does the output file exist?#{File.exist?(to_file)}"
+
+# puts "Ready, hit RETURN to continue, CTRL-C to abort."
+# $stdin.gets
+
+# out_file = open(to_file, 'w')
+# out_file.write(indata)
+
+# puts "Alright, all done"
+
+# out_file.close
+# in_file.close
+
+# def print_two(*args)
+# 	arg1, arg2 = args
+# 	puts "arg1: #{arg1}, arg2: #{arg2}"
+# end
+
+# print_two('denis', 'frances')
+
+# def print_two_again(arg1, arg2)
+# 	puts "arg1: #{arg1}, arg2: #{}"
+# end
+
+# print_two_again("Zed","Shaw")
+
+# def print_none()
+# 	puts "i got nothing"
+# end
+
+# print_none()
+
+def chesses_and_crackers(chesse_count, boxes_of_crackers)
+	puts "You have #{chesse_count} chesses!"
+	puts "You have #{boxes_of_crackers} boxes of crakers!"
+	puts "Man that's enought for a party!"
+	puts "get a blanket.\n"
+end
+
+puts "We can just give the function numbers directly:"
+chesses_and_crackers(20, 30)
+
+puts "OR, we can use variables from our script:"
+
+amount_of_cheese = 10
+amount_of_crackers = 50
+
+chesses_and_crackers(amount_of_cheese, amount_of_crackers)
+
+puts "We can even do math inside too:"
+chesses_and_crackers(10 + 20, 5 + 6)
+
+puts "And we can combine the two, variables and math:"
+chesses_and_crackers(amount_of_cheese + 100, amount_of_crackers + 1000)
+
 
 
 
