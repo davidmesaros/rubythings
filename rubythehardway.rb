@@ -245,33 +245,73 @@
 # end
 
 # print_none()
+# def function with two arg
+# def chesses_and_crackers(chesse_count, boxes_of_crackers)
+# 	# we setting up our data and calling the arg 
+# 	puts "You have #{chesse_count} chesses!"
+# 	puts "You have #{boxes_of_crackers} boxes of crakers!"
+# 	puts "Man that's enought for a party!"
+# 	puts "get a blanket.\n"
+# end
 
-def chesses_and_crackers(chesse_count, boxes_of_crackers)
-	puts "You have #{chesse_count} chesses!"
-	puts "You have #{boxes_of_crackers} boxes of crakers!"
-	puts "Man that's enought for a party!"
-	puts "get a blanket.\n"
+# puts "We can just give the function numbers directly:"
+# chesses_and_crackers(20, 30)
+# # calling the function passing in the arg's
+# puts "OR, we can use variables from our script:"
+
+# amount_of_cheese = 10
+# amount_of_crackers = 50
+
+# chesses_and_crackers(amount_of_cheese, amount_of_crackers)
+
+# puts "We can even do math inside too:"
+# chesses_and_crackers(10 + 20, 5 + 6)
+
+# puts "And we can combine the two, variables and math:"
+# chesses_and_crackers(amount_of_cheese + 100, amount_of_crackers + 1000)
+
+# puts "What are bring to the party"
+# puts "How many crackers"
+# amount_of_crackers = gets.chomp
+# puts "How many cheese"
+# amount_of_cheese = gets.chomp
+# puts "Wow so You have!"
+# chesses_and_crackers(amount_of_cheese, amount_of_crackers)
+
+input_file = ARGV.first
+
+def print_all(f)
+ puts f.read
 end
 
-puts "We can just give the function numbers directly:"
-chesses_and_crackers(20, 30)
+def rewind(f)
+	f.seek(0)
+end	
 
-puts "OR, we can use variables from our script:"
+def print_a_line(line_count, f)
+	puts "#{line_count}, #{f.gets.chomp}"
+end
 
-amount_of_cheese = 10
-amount_of_crackers = 50
+current_file = open(input_file)
 
-chesses_and_crackers(amount_of_cheese, amount_of_crackers)
+puts "First lets print the whole file:\n"
 
-puts "We can even do math inside too:"
-chesses_and_crackers(10 + 20, 5 + 6)
+print_all(current_file)
 
-puts "And we can combine the two, variables and math:"
-chesses_and_crackers(amount_of_cheese + 100, amount_of_crackers + 1000)
+puts "Now lets rewind, kind of like a tape"
 
+rewind(current_file)
 
+puts "Lets pring three line:"
 
+current_line = 1
+print_a_line(current_line, current_file)
 
+current_line += 1
+print_a_line(current_line, current_file)
+
+current_line += 1
+print_a_line(current_line, current_file)
 
 
 
